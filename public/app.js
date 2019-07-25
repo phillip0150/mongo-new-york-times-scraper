@@ -46,5 +46,15 @@ $(document).ready(function() {
 
     });
 
+    $("#note").on("click",function(){
+
+        $(".modal").toggle();
+
+    });
+
+    $(".delete").on("click",function(){
+        $(".modal").toggle();
+    });
+
 
 });
