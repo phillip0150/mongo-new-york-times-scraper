@@ -1,0 +1,30 @@
+<br>
+{{#each theResults}}
+<div class="columns">
+  <div class="column is-three-fifths is-offset-one-fifth">
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{this.title}}
+    </p>
+    {{!-- <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a> --}}
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{this.summary}}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a id="delete" article-id="{{this._id}}" article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item delete-article">Delete</a>
+    <a href="{{this.link}}" class="card-footer-item">Link</a>
+    <a id="delete" article-id="{{this._id}}"article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item delete-article">Note</a>
+
+  </footer>
+</div>
+  </div>
+</div>
+{{/each}}
