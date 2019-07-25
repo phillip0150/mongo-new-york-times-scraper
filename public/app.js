@@ -48,14 +48,15 @@ $("#navMenu").hide();
 
     });
 
-    $("#note").on("click",function(){
-
-        $(".modal").toggleClass("is-active");
+    $(".theNote").on("click",function(){
+        var theModal = $(this).attr("article-id");
+        $("#"+theModal).toggleClass("is-active");
 
     });
 
     $(".delete").on("click",function(){
-        $(".modal").toggleClass("is-active");
+        var theModal = $(this).attr("article-id");
+        $("#"+theModal).toggleClass("is-active");
     });
 
     $(".navbar-burger").click(function(){
@@ -89,6 +90,8 @@ $("#navMenu").hide();
         
         window.location.reload();
     });
+
+
 
 
 // });

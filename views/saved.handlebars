@@ -21,18 +21,18 @@
   <footer class="card-footer">
     <a id="delete" article-id="{{this._id}}" article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item delete-article">Delete</a>
     <a href="{{this.link}}" class="card-footer-item">Link</a>
-    <a id="note" article-id="{{this._id}}"article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item note-article">Note</a>
+    <a id="note" class="theNote" article-id="{{this._id}}"article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item note-article">Update Note</a>
 
   </footer>
 </div>
   </div>
 </div>
-<div class="modal">
+<div class="modal" id="{{this._id}}">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">{{this._id}}</p>
-      <button class="delete"  aria-label="close"></button>
+      <button class="delete"  article-id="{{this._id}}"aria-label="close"></button>
     </header>
     <section class="modal-card-body">
       <input type="text" id="noteTitle" value="{{this.note}}">
