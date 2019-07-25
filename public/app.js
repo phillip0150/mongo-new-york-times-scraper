@@ -1,4 +1,6 @@
-$(document).ready(function() {
+var navBar = false;
+$("#navMenu").hide();
+// $(document).ready(function() {
     
     $(".saved").on("click",function(){
         
@@ -48,13 +50,45 @@ $(document).ready(function() {
 
     $("#note").on("click",function(){
 
-        $(".modal").toggle();
+        $(".modal").toggleClass("is-active");
 
     });
 
     $(".delete").on("click",function(){
-        $(".modal").toggle();
+        $(".modal").toggleClass("is-active");
+    });
+
+    $(".navbar-burger").click(function(){
+        if(navBar===false){
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+            navBar = true;
+        }
+        else if(navBar===true){
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+            navBar = false;
+        }
+
+    });
+
+    $(document).on("click", ".is-success", function(){
+        
+        var id = $(this).attr("article-id");
+        console.log(id);
+        var textArea = document.getElementById("noteText").value;
+        console.log("textarea:" + textArea)
+        var addNote = {
+            title: $("#noteTitle").val(),
+            body: textArea
+        };
+        $.ajax("/api/note/"+id, {
+            type: "POST",
+            data: addNote
+        });
+        
+        window.location.reload();
     });
 
 
-});
+// });

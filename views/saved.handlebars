@@ -31,14 +31,15 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
+      <p class="modal-card-title">{{this._id}}</p>
+      <button class="delete"  aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <!-- Content ... -->
+      <input type="text" id="noteTitle" value="{{this.note}}">
+      <input type="text" id="noteText" value="{{this.note}}">
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">Save</button>
+      <button class="button is-success" article-id="{{this._id}}">Save</button>
     </footer>
   </div>
 </div>

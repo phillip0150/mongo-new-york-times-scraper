@@ -115,4 +115,19 @@ app.get("/scrape", function(req, res) {
     });
     
   });
+
+   app.get("/note/:id", function(req, res) {
+     console.log(req.params.id);
+    db.Note.find({_id:req.params.id}).then(function(dbnote){
+      var hbsObject = {
+          theNote: dbnote,
+          theID: req.params.id
+          };
+      console.log(hbsObject);
+      res.render("note", hbsObject);
+    }).catch(function(err){
+      console.log(err.message);
+    });
+        
+      });
 };
