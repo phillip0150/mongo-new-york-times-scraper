@@ -21,8 +21,8 @@
   <footer class="card-footer">
     <a id="delete" article-id="{{this._id}}" article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item delete-article">Delete</a>
     <a href="{{this.link}}" class="card-footer-item">Link</a>
-    <a id="note" class="theNote" article-id="{{this._id}}"article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item note-article">Update Note</a>
-
+    <a id="note" class="card-footer-item theNote" article-id="{{this._id}}"article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item note-article">Update Note</a>
+    <a id="viewNote" class="card-footer-item viewNote" article-id="{{this._id}}"article-title="{{this.title}}" article-summary="{{this.summary}}" long-url="{{this.link}}"class="card-footer-item note-article">View Note</a>
   </footer>
 </div>
   </div>
@@ -35,8 +35,16 @@
       <button class="delete"  article-id="{{this._id}}"aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <input type="text" id="noteTitle" value="{{this.note}}">
-      <input type="text" id="noteText" value="{{this.note}}">
+      <div class="field">
+        <div class="control">
+          <input class="input is-primary" type="text" placeholder="Title" id="noteTitle">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input class="input is-primary" type="text" placeholder="Body" id="noteText">
+        </div>
+      </div>
     </section>
     <footer class="modal-card-foot">
       <button class="button is-success" article-id="{{this._id}}">Save</button>

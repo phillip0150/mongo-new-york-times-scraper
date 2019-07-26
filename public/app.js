@@ -93,5 +93,30 @@ $("#navMenu").hide();
 
 
 
+$(document).on("click", ".viewNote", function(){
+// Empty the notes from the note section
+    var theModal = $(this).attr("article-id");
+    $("#"+theModal).toggleClass("is-active");
+  // Save the id from the p tag
+  var thisId = $(this).attr("article-id");
+
+  // Now make an ajax call for the Article
+  $.ajax({
+    method: "GET",
+    url: "/articles/" + thisId
+  })
+    // With that done, add the note information to the page
+    .then(function(data) {
+    
+      // If there's a note in the article
+      if (data.note) {
+        // Place the title of the note in the title input
+        $("#noteTitle").val(data.note.title);
+        // Place the body of the note in the body textarea
+        $("#noteText").val(data.note.body);
+      }
+    });
+
+});
 
 // });
