@@ -40,8 +40,10 @@ app.engine(
     
 app.set("view engine", "handlebars");
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/NYTScraper", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/NYTScraper", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
+mongoose.connect(MONGODB_URI);
 
 // Start the server
 app.listen(PORT, function() {
